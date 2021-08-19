@@ -1,0 +1,6 @@
+
+Head(element) ----> h1(element) ----> "Title" (Text)
+
+Body(element) ----> input tag(element) _ Text
+.
+.----> input tag(element) _ Button
