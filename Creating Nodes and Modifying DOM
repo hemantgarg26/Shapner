@@ -1,0 +1,60 @@
+// Query Parent and Siblings (DOM Manipulation Javascript)
+
+var items = document.querySelector('#items');
+
+//Parent Node
+console.log(items.parentNode);
+
+
+//Parent Element
+console.log(items.parentElement);
+
+//childNodes
+console.log(items.childNodes); // Will count the line breaks, whitespaces etc. // __proto__ = Nodelist
+
+console.log(items.children); // Will not count the line breaks, whitespaces etc. // __proto__ = HTML Collection
+// Grabbing a specific item in a list
+// items.children[1].style.background = 'green';
+
+//First Child Property
+console.log(items.firstChild); // Will give us the text node (will include any lineBreaks, whitespaces)
+//First Element Child
+console.log(items.firstElementChild); // Case similar to childNode and children methods
+
+//Last Child Property
+console.log(items.lastChild); // Will give us the text node (will include any lineBreaks, whitespaces)
+//last Element Child
+console.log(items.lastElementChild); // Case similar to childNode and children methods
+
+//Sibling
+console.log(items.nextSibling); //Will give text element
+console.log(items.nextElementSibling);
+
+//previous sibling
+console.log(items.previousSibling); //Will give text element
+console.log(items.previousElementSibling);
+
+//creating elements
+var newDiv = document.createElement('div');
+// Add class
+newDiv.className = 'hello';
+//Add ID
+newDiv.id = 'hello__1';
+//Add attribute
+newDiv.setAttribute('title', 'New Div creation');
+
+
+//Create new Text Node
+var newTextNode = document.createTextNode('HEllo');
+
+// Add newly created textNode to new Div
+newDiv.appendChild(newTextNode);
+
+//Inserting Hello before Item Lister
+var container = document.querySelector('header .container');
+var h1 = document.querySelector('header h1');
+
+container.insertBefore(newDiv, h1)
+
+
+//console.log(newDiv);
