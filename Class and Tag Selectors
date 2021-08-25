@@ -1,0 +1,19 @@
+// Get Element by Class Name
+
+//var listItems = document.getElementByClassName('list-group-item');
+//listItems[2].style.backgroundColor = 'green';
+
+/* listItem[0].style.fontWeight = 'bold';
+listItem[1].style.fontWeight = 'bold';
+listItem[2].style.fontWeight = 'bold';
+listItem[3].style.fontWeight = 'bold'; */
+
+
+var li = document.getElementByClassName('li');
+console.log(li);
+
+// Adding a new li tag with different class name
+// <li> Item 5 </li>
+
+var li2 = document.getElementsByTagName('li');
+console.log(li);
