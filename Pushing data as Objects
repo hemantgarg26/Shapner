@@ -30,6 +30,9 @@ function onSubmit(e){
 
         localStorage.setItem(`Object with name - ${nameInput.value}`, tempObj_serialized )
 
+        // Getting the Object back from the Local Storage
+        let tempOBJ_deserialised = JSON.parse(localStorage.getItem(`Object with name - ${nameInput.value}`));
+        console.log(tempOBJ_deserialised);
         //Clear the fields
         nameInput.value = '';
         emailInput.value = '';
