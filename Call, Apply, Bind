@@ -1,0 +1,31 @@
+var obj = {var1:6};
+
+function funcTry(a){
+    return this.var1 *a;
+};
+
+let arrT = [7];
+console.log(funcTry.call(obj, 5));
+console.log(funcTry.apply(obj, arrT));
+
+let boundF = funcTry.bind(obj);
+console.log(boundF(8));
+
+
+
+let Student = {age:20};
+function printAge(){
+    return this.age;
+}
+let boundF2 = printAge.bind(Student)
+console.log(boundF2())
+
+let multiply = function(x, y){
+    console.log(x*y);
+}
+let multiplyByTwo = multiply.bind(this, 2);
+console.log(multiplyByTwo(3));
+
+let multiplyByThree = multiply.bind(this, 3);
+console.log(multiplyByThree(5));
+
