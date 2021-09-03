@@ -1,0 +1,50 @@
+console.log("Person_1");
+console.log("Person_2");
+
+// const promise1 = new Promise((resolve, reject)=> {
+//     setTimeout(()=> {
+//         resolve('Hello World');
+//     }, 3000)
+// })
+
+// const promise2 = promise1.then((t) => {
+//     console.log("Enter");
+//     console.log("Exit");
+//     return new Promise((resolve, reject)=> resolve(`${t} Enter_2`));
+// });
+
+// const promise3 = promise2.then((t) => {
+//     console.log("Enter_3");
+//     console.log("Exit_2");
+//     return new Promise((resolve, reject)=> resolve(`${t} Enter_4`));
+// });
+
+// promise3.then((t) => console.log(t))
+
+// Creating an Async Function
+const preMovie = async ()=>{
+    const promiseWifeBringingTickets = new Promise((resolve, reject)=>{
+        setTimeout(()=>reject("ticket"), 3000);
+    });
+    // const getPopcorn = new Promise((resolve, reject) => resolve(`popcorn`));
+    // const addButter = new Promise((resolve, reject) => resolve(`butter`));
+    // const getColdDrinks = new Promise((resolve, reject) => resolve(`Cold_Drinks`));
+    // const getCandy = new Promise((resolve, reject) => resolve("Candy !!!"))
+    
+    let ticket;
+    try{
+        ticket = await promiseWifeBringingTickets;
+    }catch(e){
+        ticket = "Sad face";
+    }    
+
+    // let[popcorn, candy, coke] = await Promise.all([getPopcorn, getCandy, getColdDrinks])
+    // console.log(`${popcorn} , ${candy} , ${coke}`)
+
+    return ticket;
+}
+
+preMovie().then((m) => console.log(`person 3: Shows ${m}`));
+
+console.log("Person_4");
+console.log("Person_5");
