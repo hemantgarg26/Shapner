@@ -1,0 +1,45 @@
+function finMinBST(root){
+    if(root === null){
+        return;
+    }
+
+    let current = root;
+    while(current.left !== null){
+        current = current.left;
+    }
+
+    return current
+}
+
+
+function finMaxBST(root){
+    if(root === null){
+        return
+    }
+
+    while(current.right !== null){
+        current = current.right;
+    }
+
+    return current
+}
+
+function findMinRecursive(root){
+    if(root === null){
+        return;
+    }else if(root.left === null){
+        return root.data
+    }
+
+    return findMinRecursive(root.left)
+}
+
+function findMaxRecursive(root){
+    if(root === null){
+        return;
+    }else if(root.right === null){
+        return root.data
+    }
+
+    return findMaxRecursive(root.right)
+}
