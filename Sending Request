@@ -1,0 +1,35 @@
+//Importing Core Modules
+// const http = require("http");
+
+//Installing 3rd Party packages
+const express = require("express");
+const bodyParser = require('body-parser');
+
+const app = express();
+
+//Use allows us to add a middleware function
+//function passed to use will execute for all incoming requests
+// Next is a function passed into the use function which allows 
+// the rquest to pass onto the next middleware
+
+app.use(bodyParser.urlencoded({extended:false}));
+
+app.use('/add-product', (req, res, next) => {
+    res.send('<form action="/product" method="POST"><input type = "text" name="title"><br><br><input type = "number" name="numberOfProducts"><br><br><button type="submit">Send</button></form>');
+})
+
+app.post('/product', (req, res, next)=> {
+    console.log(req.body);
+    res.redirect('/')
+})
+
+app.use((req, res, next) => {
+    res.send('<h1> Hello Express JS !! </h1>');
+
+})
+
+// const server = http.createServer(app);
+
+// server.listen(4000);
+
+app.listen(4000);
