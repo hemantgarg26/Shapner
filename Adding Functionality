@@ -1,0 +1,49 @@
+const path = require('path');
+const express = require('express');
+const rootDir = require('../util/path');
+const fs = require("fs");
+
+const router = express.Router();
+
+
+// /admin/add-product => GET Request
+router.get('/add-product', (req, res, next) => {
+    res.sendFile(path.join(rootDir, 'views', 'add-product.html'));
+})
+
+
+// /admin/add-product => POST Request
+router.post('/admin/add-product', (req, res, next)=> {
+    console.log(req.body);
+    res.redirect('/')
+})
+
+// // /admin/login => GET Request
+// router.get('/login', (req, res, next)=> {
+//     res.send('<form action="/admin/login" method="POST"><input type="text" name="username"><br><br><button type="submit"> Enter Username </button></form>')
+// })
+
+// // /admin/login => POST Request
+// router.post('/login', (req, res, next)=> {
+//     // localStorage.setItem("username", req.body.username);
+//     fs.writeFile('username.txt', req.body.username, err => {
+//         console.log(err);
+//     });
+//     console.log(req.body.username)
+//     res.redirect('/admin/')
+// })
+
+// // / => GET Request
+// router.get('/', (req, res, next)=> {
+//     res.send('<form action="/admin/" method="POST"><input type="text" name="sendMessage"><br><br><button type="submit"> Send Message </button></form>')
+// })
+
+// router.post('/', (req, res, next)=> {
+//     // localStorage.setItem("sendMessage", "req.body.sendMessage");
+//     fs.writeFileSync('message.txt', req.body.sendMessage, err=>{
+//         console.log(err);
+//     })
+//     console.log(req.body.sendMessage)
+// })
+
+module.exports = router;
